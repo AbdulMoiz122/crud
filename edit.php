@@ -1,18 +1,8 @@
 <?php include 'inc/header.php'; ?>
-
+<?php include 'config/database.php'; ?>
 
 <?php
-define('DB_HOST','localhost');
-define('DB_USER','Moiz');
-define('DB_PASS','123456789');
-define('DB_NAME','crud');
-// Connection
-$conn = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-// Checking for connection
-if($conn->connect_error)
-{
-    die('Connection Failed' . $conn->connect_error);
-}
+
 
 $id = $name = $email = $phone = $address ='';
 $errorMessage = $successMessage = "";
@@ -59,7 +49,7 @@ else{
         }
         $sql = "UPDATE user".
                 "SET name = '$name', email = '$email', phone = '$phone', address = '$address' ".
-                "WHERE  id = $id";
+                "WHERE  id = $id"; 
 
         $result = mysqli_query($conn,$sql);
 
@@ -91,7 +81,7 @@ else{
     ?>
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-        <input type="hidden" value="<?php echo $id; ?>" name = "id" >
+        <input type="hidden" value="<?php echo $id; ?>" >
         <div class="row mb-3">
             <label class="col-sm-3 col-form-label">Name</label>
             <div class="col-sm-6">
