@@ -14,17 +14,17 @@ if($_SERVER['REQUEST_METHOD'] =='GET')
     {
         header("Location : /crud/index.php");
         exit;
-    }
+    } 
     $id = $_GET["id"];
 
     // read the data where id is matched in database
     $sql = "SELECT * FROM user WHERE id = $id";
-    $result = mysqli_query($conn,$sql);
+    $result = $conn->query($sql);
     $row = $result->fetch_assoc();
 
     if(!$row)
     {
-        header("Location : /crud/index.php");
+        header("location: /crud/index.php");
         exit;
     }
 
@@ -41,7 +41,8 @@ else{
     $phone = $_POST["phone"];
     $address = $_POST["address"];
 
-    do{
+    do
+    {
         if(empty($id) || empty($name) || empty($email) || empty($phone) || empty($address))
         {
             $errorMessage = "All the fields are required";
@@ -51,7 +52,7 @@ else{
                 "SET name = '$name', email = '$email', phone = '$phone', address = '$address' ".
                 "WHERE  id = $id"; 
 
-        $result = mysqli_query($conn,$sql);
+        $result = $conn->query($sql); 
 
         if(!$result)
         {
@@ -59,12 +60,12 @@ else{
             break;
         }
         $successMessage = "Client added successfully";
-        header("Location : /crud/index.php");
+        header("location: /crud/index.php");
         exit;
 
     }while(false);
-
-}
+ 
+} 
 ?>
 <div class="container" style="margin-top: 70px;">
     <h2>New Client</h2>
@@ -81,7 +82,7 @@ else{
     ?>
 
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-        <input type="hidden" value="<?php echo $id; ?>" >
+        <input type="hidden" name = "id" value="<?php echo $id; ?>" >
         <div class="row mb-3">
             <label class="col-sm-3 col-form-label">Name</label>
             <div class="col-sm-6">

@@ -1,4 +1,6 @@
 <?php include 'inc/header.php'; ?>
+<?php include 'config/database.php'; ?>
+
 
     <div class="container" style="margin-top: 70px;">
         <h2 class="navigator">List of Headings</h2>
@@ -6,7 +8,7 @@
         <br>
 
         <table class="table">
-            <thead>
+            <thead> 
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
@@ -20,21 +22,9 @@
             <tbody>
 
                 <?php
-                    // Defining
-                    define('DB_HOST','localhost');
-                    define('DB_USER','Moiz');
-                    define('DB_PASS','123456789');
-                    define('DB_NAME','crud');
-                    // Connection
-                    $conn = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-                    // Checking for connection
-                    if($conn->connect_error)
-                    {
-                        die('Connection Failed' . $conn->connect_error);
-                    }
                     // fetching data from database
                     $sql = 'SELECT * FROM user';
-                    $result = mysqli_query($conn,$sql);
+                    $result = $conn->query($sql);
                     // checking from fetching correctly or not
                     if(!$result)
                     {
