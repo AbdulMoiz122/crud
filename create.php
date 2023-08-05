@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 
 <div class="container" style="margin-top: 70px;">
-    <h2>New Client</h2>
+    <h2>Adding Client</h2>
 
     <?php if(!empty($errorMessage))
     {

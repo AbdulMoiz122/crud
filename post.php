@@ -21,6 +21,8 @@
                 <?php
                     // fetching data from database
                     $sql = 'SELECT * FROM posts';
+                    
+
                     $result = $conn->query($sql);
                     // checking from fetching correctly or not
                     if(!$result)
@@ -36,8 +38,8 @@
                             <td>$row[title]</td>
                             <td>$row[userid]</td>
                             <td>
-                                <a class='btn btn-primary btn-sm' href='/crud/edit.php'?id = $row[id]>Edit</a>
-                                <a class='btn btn-danger btn-sm' href='/crud/delete.php'?id = $row[id]>Delete</a>
+                                <a class='btn btn-primary btn-sm' href='/crud/editpost.php?id=$row[id]'>Edit</a>
+                                <a class='btn btn-danger btn-sm' href='/crud/deletepost.php?id=$row[id]'>Delete</a>
                             </td>
                         </tr>";
                     }
