@@ -40,14 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         echo "Error: " . mysqli_error($conn);
     }
 
-    // read the data where id is matched in the database
-    // $sql = "SELECT * FROM user WHERE id = '$id'";
-    // $stmt = $conn->prepare($sql);
-    // $stmt->bind_param("i", $id);
-    // $stmt->execute();
-    // $result = $stmt->get_result();
-    // $row = $result->fetch_assoc();
-
 } 
 elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check for form submission

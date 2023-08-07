@@ -8,7 +8,7 @@ $errorMessage = $successMessage = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!isset($_GET["id"])) {
-        header("Location: /crud/post.php");
+        header("location: /crud/post.php");
         exit;
     }
 
@@ -45,13 +45,12 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $sql = "UPDATE posts Set title = '$title' WHERE id = '$id'";
         $result = mysqli_query($conn,$sql);
-
         if(!$result)
         {
             $errorMessage = "Invalid Query : ".$conn->error;
             break;
         }
-
+        
         $successMessage = "Title updated successfulyy";
         header("location: /crud/post.php");
         exit;
@@ -91,7 +90,7 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <div class="row mb-3">
             <div class="offset-sm-3 col-sm-3 d-grid">
-                <button type="submit" class="btn btn-primary" href='/crud/post.php'>Submit</button>
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             </div>
             <div class="col-sm-3 d-grid">
                 <a class="btn btn-outline-primary" href="/crud/post.php" role="button">Cancel</a>
