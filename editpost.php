@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $row = mysqli_fetch_assoc($result);
 
         if ($row) {
+            
             // Now you can access the values using the column names
             $title = $row["title"];
         }
@@ -35,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check for form submission
     $title = $_POST["title"];
+    $id = $_POST["id"];
     do
     {
         if(empty($title))

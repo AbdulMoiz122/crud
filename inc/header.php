@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">CRUD</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,10 +18,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Features</a>
-                <a class="nav-item nav-link" href="#">Pricing</a>
-                <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                <a class="btn btn-secondary ml-5 <?php if ($_SERVER['REQUEST_URI'] == '/crud/index.php') echo 'active'; ?>" href="/crud/index.php" role="button">Users</a>
+                <a class="btn btn-secondary ml-2 <?php if ($_SERVER['REQUEST_URI'] == '/crud/post.php') echo 'active'; ?>" href="/crud/post.php" role="button">Posts</a>
             </div>
         </div>
     </nav>
+
+    <!-- <nav class="navbar fixed-top bg-secondary">
+        <div class="container-fluid">
+            <a class="navbar-brand pl-5" style="color: white;" href="#">CRUD</a>
+        </div>
+    </nav> -->

@@ -6,7 +6,6 @@
     <div class="container" style="margin-top: 70px;">
         <h2 class="navigator">List of Headings</h2>
         <a class="btn btn-secondary mb-3 mt-1" href="/crud/create.php" role="button">New Client</a>
-        <a class="btn btn-secondary mb-3 mt-1" href="/crud/post.php" role="button">Post</a>
         <br>
 
         <table class="table">
