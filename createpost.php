@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
         $result = $conn->query($sql);
 
         if(!$result) 
-        {
+        { //modals bootstrap, sweet alert
             $errorMessage = "Invalid Query : " . $conn->error;
             break;
         }
